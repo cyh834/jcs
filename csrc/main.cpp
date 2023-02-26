@@ -11,7 +11,7 @@ void sim_init(){
 #ifdef HAS_WAVE
 	contextp->traceEverOn(true);
 	top->trace(tfp,99);
-	tfp->open("wave.vcd");
+	tfp->open("build/wave.vcd");
 #endif
 }
 

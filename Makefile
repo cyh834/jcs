@@ -22,11 +22,12 @@ sim: $(VSRCS) $(CSRCS)
 	--Mdir $(OBJ_DIR) \
 	$(addprefix -CFLAGS , $(CFLAGS)) $(addprefix -LDFLAGS , $(LDFLAGS)) 
 
-wave: sim
-	gtkwave wave.vcd
-
 run: sim
 	$(OBJ_DIR)/V$(TOPNAME)
+
+wave: run
+	gtkwave build/wave.vcd
+
 
 clean:
 	rm -rf $(VSRC_DIR)
